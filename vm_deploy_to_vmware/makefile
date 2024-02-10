@@ -1,6 +1,5 @@
 .PHONY: deploy-vm check-credentials ansible-deploy-vm
 
-
 # Define variables
 VMWARE_CREDS_FILE := vmware_credentials.yml
 
