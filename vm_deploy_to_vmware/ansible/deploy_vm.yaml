@@ -1,0 +1,28 @@
+---
+- name: Deploy VM in VMware
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - vmware_credentials.yaml
+  tasks:
+    - name: Deploy VM
+      vmware_guest:
+        hostname: "{{ vmware_hostname }}"
+        username: "{{ vmware_username }}"
+        password: "{{ vmware_password }}"
+        cluster_name: "{{ cluster_name }}"
+        validate_certs: no
+        folder: "{{ vm_folder }}"
+        name: "{{ vm_name }}"
+        state: poweredon
+        template: "{{ template_name }}"
+        hardware:
+          memory_mb: "{{ vm_memory_mb }}"
+          num_cpus: "{{ vm_num_cpus }}"
+          disks:
+            - size_gb: "{{ vm_disk_size_gb }}"
+              type: thin
+        networks:
+          - name: "{{ network_name }}"
+            start_connected: true
+            vlan: "{{ vlan_id }}"
