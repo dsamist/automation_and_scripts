@@ -1,4 +1,3 @@
-
 .PHONY: deploy-vm check-credentials ansible-deploy-vm
 
 

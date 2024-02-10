@@ -1,0 +1,13 @@
+# hyperv_credentials.yml
+
+hyperv_hostname: "{{ lookup('env', 'HYPERV_HOSTNAME') }}"
+hyperv_username: "{{ lookup('env', 'HYPERV_USERNAME') }}"
+hyperv_password: "{{ lookup('env', 'HYPERV_PASSWORD') }}"
+hyperv_memory_mb: "{{ lookup('env', 'HYPERV_MEMORY_MB') }}"
+hyperv_num_cpus: "{{ lookup('env', 'HYPERV_NUM_CPUS') }}"
+hyperv_vm_folder: "{{ lookup('env', 'HYPERV_VM_FOLDER') }}"
+hyperv_vm_name: "{{ lookup('env', 'HYPERV_VM_NAME') }}"
+hyperv_vm_disk_size_gb: "{{ lookup('env', 'HYPERV_VM_DISK_SIZE_GB') }}"
+hyperv_network_name: "{{ lookup('env', 'HYPERV_NETWORK_NAME') }}"
+hyperv_vlan_id: "{{ lookup('env', 'HYPERV_VLAN_ID') }}"
+# ... other variables

@@ -1,0 +1,21 @@
+---
+- name: Deploy VM in Hyper-V
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - hyperv_credentials.yml
+  tasks:
+    - name: Deploy VM in Hyper-V
+      # Use Hyper-V module tasks here
+      win_hyperv_virtual_machine:
+        hostname: "{{ hyperv_hostname }}"
+        username: "{{ hyperv_username }}"
+        password: "{{ hyperv_password }}"
+        memory_mb: "{{ hyperv_memory_mb }}"
+        num_cpus: "{{ hyperv_num_cpus }}"
+        vm_folder: "{{ hyperv_vm_folder }}"
+        vm_name: "{{ hyperv_vm_name }}"
+        vm_disk_size_gb: "{{ hyperv_vm_disk_size_gb }}"
+        network_name: "{{ hyperv_network_name }}"
+        vlan_id: "{{ hyperv_vlan_id }}"
+        # ... other variables for Hyper-V
